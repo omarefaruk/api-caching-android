@@ -20,16 +20,15 @@ class ContributorViewModel @Inject constructor(
 
     private val _state = mutableStateOf<Contributor?>(null)
     val state: State<Contributor?> = _state
-
     private val contributorRole: String? = savedStateHandle.get<String>(Constants.PARAM_CONTRIBUTOR_ROLE)
 
     init {
         contributorRole?.let { getContributor(it) }
     }
-        private fun getContributor(contributorRole: String) {
-            viewModelScope.launch {
-               _state.value = getContributorUseCase(contributorRole)
-            }
+    private fun getContributor(contributorRole: String) {
+        viewModelScope.launch {
+           _state.value = getContributorUseCase(contributorRole)
         }
+    }
 }
 

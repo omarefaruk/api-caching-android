@@ -144,7 +144,7 @@ class MainActivity : ComponentActivity() {
                                         }
                                         when(menuItem.id) {
                                             "paypal" -> uriHandler.openUri("https://paypal.me/Mixandscope")
-                                            //else ->
+                                            else -> navController.navigate(Screen.ContributorScreen.route + "/${menuItem.id}")
                                         }
                                     }
                                 )
@@ -229,7 +229,6 @@ class MainActivity : ComponentActivity() {
 
                                             when (currentRoute) {
                                                 Screen.SurahListScreen.route -> {
-
                                                     Row(
                                                         modifier = Modifier.fillMaxWidth(),
                                                         horizontalArrangement = Arrangement.spacedBy(12.dp, Alignment.CenterHorizontally),
@@ -362,6 +361,83 @@ class MainActivity : ComponentActivity() {
                                                     }
 
                                                 }
+
+                                                Screen.ContributorScreen.route + "/{contributorRole}" -> {
+
+                                                    Row(
+                                                        modifier = Modifier.fillMaxWidth(),
+                                                        horizontalArrangement = Arrangement.spacedBy(12.dp, Alignment.CenterHorizontally),
+                                                        verticalAlignment = Alignment.CenterVertically,
+                                                    ) {
+
+                                                        FilledIconButton(
+                                                            onClick = { },
+                                                            modifier = Modifier
+                                                                .size(48.dp),
+
+                                                            colors = IconButtonDefaults.filledIconButtonColors(
+                                                                containerColor = Color(0xFFD4AF37),
+                                                                contentColor = Color(0xFF5C4033)
+                                                            )
+                                                        ) {
+                                                            Icon(
+                                                                imageVector = Icons.Default.Home ,
+                                                                contentDescription = "Go back to home screen"
+                                                            )
+                                                        }
+
+                                                        FilledIconButton(
+                                                            onClick = { cacheAction() },
+                                                            modifier = Modifier
+                                                                .size(48.dp),
+                                                            colors = IconButtonDefaults.filledIconButtonColors(
+                                                                containerColor = Color(0xFFD4AF37),
+                                                                contentColor = Color(0xFF5C4033)
+                                                            )
+                                                        ) {
+                                                            Icon(
+                                                                imageVector = if (isCurrentSurahCached) Icons.Default.CheckCircle else Icons.Default.Download,
+                                                                contentDescription = "Cache Current Surahs"
+                                                            )
+                                                        }
+
+                                                        FilledIconButton(
+                                                            onClick = { textSizeViewModel.decreaseTextSize() },
+                                                            modifier = Modifier
+                                                                .size(48.dp),
+
+                                                            colors = IconButtonDefaults.filledIconButtonColors(
+                                                                containerColor = Color(0xFFD4AF37),
+                                                                contentColor = Color(0xFF5C4033)
+                                                            )
+                                                        ) {
+                                                            Icon(
+                                                                imageVector = Icons.Default.Remove,
+                                                                contentDescription = "Decrease Text Size"
+                                                            )
+                                                        }
+
+                                                        FilledIconButton(
+                                                            onClick = { textSizeViewModel.increaseTextSize() },
+                                                            modifier = Modifier
+                                                                .size(48.dp),
+
+                                                            colors = IconButtonDefaults.filledIconButtonColors(
+                                                                containerColor = Color(0xFFD4AF37),
+                                                                contentColor = Color(0xFF5C4033)
+                                                            )
+                                                        ) {
+                                                            Icon(
+                                                                imageVector = Icons.Default.Add ,
+                                                                contentDescription = "Increase Text Size"
+                                                            )
+                                                        }
+
+                                                    }
+
+                                                }
+
+
                                                 else -> {}
                                             }
                                         }
@@ -394,11 +470,9 @@ class MainActivity : ComponentActivity() {
                                         )
                                     }
                                     composable(
-                                        route = Screen.ContributorScreen.route
+                                        route = Screen.ContributorScreen.route + "/{contributorRole}"
                                     ) {
-                                        ContributorScreen(
-
-                                        )
+                                        ContributorScreen()
                                     }
                                 }
                             }
