@@ -190,7 +190,7 @@ class MainActivity : ComponentActivity() {
                                                 )
                                                 Spacer(modifier = Modifier.height(5.dp))
                                                 Text(
-                                                    text = "KS Studio",
+                                                    text = "Life Studio",
                                                     color = Color(0xFFc9d1c7),
                                                     fontWeight = FontWeight.Bold,
                                                     style = MaterialTheme.typography.titleMedium
