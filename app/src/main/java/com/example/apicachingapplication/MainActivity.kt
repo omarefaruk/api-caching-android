@@ -118,12 +118,12 @@ class MainActivity : ComponentActivity() {
                                     listOf(
                                         MenuItem(
                                             "creator",
-                                            "Creator - KillShot",
+                                            "Creator - Naveed Hafeez",
                                             Icons.Default.LightbulbCircle
                                         ),
                                         MenuItem(
                                             "designer",
-                                            "Designer - Soul Dragger",
+                                            "Designer - Bawaqar Haider",
                                             Icons.Default.Brush
                                         ),
                                         MenuItem(
