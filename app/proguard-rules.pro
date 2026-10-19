@@ -26,3 +26,14 @@
 -keep class com.example.apicachingapplication.feature_reading.data.remote.dto.** { *; }
 -keep class retrofit2.** { *; }
 -keep class com.google.gson.** { *; }
+
+# Gson: keep the API DTOs so their field names match the JSON
+-keep class com.example.apicachingapplication.feature_reading.data.remote.dto.** { *; }
+-keepattributes Signature, InnerClasses, EnclosingMethod, *Annotation*
+-keep class com.google.gson.reflect.TypeToken { *; }
+-keep class * extends com.google.gson.reflect.TypeToken
+
+# Retrofit 2.9 with suspend functions
+-keep,allowobfuscation,allowshrinking interface retrofit2.Call
+-keep,allowobfuscation,allowshrinking class retrofit2.Response
+-keep,allowobfuscation,allowshrinking class kotlin.coroutines.Continuation
