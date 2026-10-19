@@ -54,23 +54,6 @@ fun DrawerHeader(modifier: Modifier = Modifier) {
                 modifier = Modifier.size(36.dp),
                 tint = Color.White
             )
-
-            Text(
-                text = "Please Support the Team",
-                style = MaterialTheme.typography.headlineSmall.copy(
-                    fontWeight = FontWeight.Bold,
-                    color = Color.White
-                ),
-                textAlign = TextAlign.Center
-            )
-
-            Text(
-                text = "Help us continue improving the app",
-                style = MaterialTheme.typography.bodyMedium.copy(
-                    color = Color.White.copy(alpha = 0.85f)
-                ),
-                textAlign = TextAlign.Center
-            )
         }
     }
 }

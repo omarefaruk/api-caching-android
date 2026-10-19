@@ -57,6 +57,7 @@ import androidx.compose.material.icons.filled.Download
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.LightbulbCircle
 import androidx.compose.material.icons.filled.Payments
+import androidx.compose.material.icons.filled.PrivacyTip
 import androidx.compose.material.icons.filled.Remove
 import androidx.compose.material3.DrawerValue
 import androidx.compose.material3.rememberDrawerState
@@ -132,9 +133,9 @@ class MainActivity : ComponentActivity() {
                                             Icons.Default.Code
                                         ),
                                         MenuItem(
-                                            "paypal",
-                                            "PayPal Donations",
-                                            Icons.Default.Payments
+                                            "privacy",
+                                            "Privacy Policy",
+                                            Icons.Default.PrivacyTip
                                         ),
                                     ),
                                     onMenuItemClicked = { menuItem ->
@@ -143,7 +144,7 @@ class MainActivity : ComponentActivity() {
                                             drawerState.close()
                                         }
                                         when(menuItem.id) {
-                                            "paypal" -> uriHandler.openUri("https://paypal.me/Mixandscope")
+                                            "privacy" -> uriHandler.openUri("https://omarefar.uk/privacy-noble-quran.html")
                                             else -> navController.navigate(Screen.ContributorScreen.route + "/${menuItem.id}")
                                         }
                                     }
