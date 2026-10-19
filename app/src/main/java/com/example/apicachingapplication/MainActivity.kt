@@ -297,7 +297,9 @@ class MainActivity : ComponentActivity() {
                                                     ) {
 
                                                         FilledIconButton(
-                                                            onClick = { },
+                                                            onClick = {
+                                                                navController.popBackStack(Screen.SurahListScreen.route, inclusive = false)
+                                                            },
                                                             modifier = Modifier
                                                                 .size(48.dp),
 
@@ -358,21 +360,18 @@ class MainActivity : ComponentActivity() {
                                                                 contentDescription = "Increase Text Size"
                                                             )
                                                         }
-
                                                     }
-
                                                 }
-
                                                 Screen.ContributorScreen.route + "/{contributorRole}" -> {
-
                                                     Row(
                                                         modifier = Modifier.fillMaxWidth(),
                                                         horizontalArrangement = Arrangement.spacedBy(12.dp, Alignment.CenterHorizontally),
                                                         verticalAlignment = Alignment.CenterVertically,
                                                     ) {
-
                                                         FilledIconButton(
-                                                            onClick = { },
+                                                            onClick = {
+                                                                navController.popBackStack(Screen.SurahListScreen.route, inclusive = false)
+                                                            },
                                                             modifier = Modifier
                                                                 .size(48.dp),
 
@@ -387,58 +386,9 @@ class MainActivity : ComponentActivity() {
                                                             )
                                                         }
 
-                                                        FilledIconButton(
-                                                            onClick = { cacheAction() },
-                                                            modifier = Modifier
-                                                                .size(48.dp),
-                                                            colors = IconButtonDefaults.filledIconButtonColors(
-                                                                containerColor = Color(0xFFD4AF37),
-                                                                contentColor = Color(0xFF5C4033)
-                                                            )
-                                                        ) {
-                                                            Icon(
-                                                                imageVector = if (isCurrentSurahCached) Icons.Default.CheckCircle else Icons.Default.Download,
-                                                                contentDescription = "Cache Current Surahs"
-                                                            )
-                                                        }
-
-                                                        FilledIconButton(
-                                                            onClick = { textSizeViewModel.decreaseTextSize() },
-                                                            modifier = Modifier
-                                                                .size(48.dp),
-
-                                                            colors = IconButtonDefaults.filledIconButtonColors(
-                                                                containerColor = Color(0xFFD4AF37),
-                                                                contentColor = Color(0xFF5C4033)
-                                                            )
-                                                        ) {
-                                                            Icon(
-                                                                imageVector = Icons.Default.Remove,
-                                                                contentDescription = "Decrease Text Size"
-                                                            )
-                                                        }
-
-                                                        FilledIconButton(
-                                                            onClick = { textSizeViewModel.increaseTextSize() },
-                                                            modifier = Modifier
-                                                                .size(48.dp),
-
-                                                            colors = IconButtonDefaults.filledIconButtonColors(
-                                                                containerColor = Color(0xFFD4AF37),
-                                                                contentColor = Color(0xFF5C4033)
-                                                            )
-                                                        ) {
-                                                            Icon(
-                                                                imageVector = Icons.Default.Add ,
-                                                                contentDescription = "Increase Text Size"
-                                                            )
-                                                        }
-
                                                     }
 
                                                 }
-
-
                                                 else -> {}
                                             }
                                         }
