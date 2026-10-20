@@ -59,6 +59,7 @@ import androidx.compose.material.icons.filled.LightbulbCircle
 import androidx.compose.material.icons.filled.Payments
 import androidx.compose.material.icons.filled.PrivacyTip
 import androidx.compose.material.icons.filled.Remove
+import androidx.compose.material.icons.filled.Translate
 import androidx.compose.material3.DrawerValue
 import androidx.compose.material3.rememberDrawerState
 import androidx.compose.runtime.mutableStateOf
@@ -133,6 +134,11 @@ class MainActivity : ComponentActivity() {
                                             Icons.Default.Code
                                         ),
                                         MenuItem(
+                                            "translation",
+                                            "Translation - The Clear Quran® by Dr. Mustafa Khattab",
+                                            Icons.Default.Translate
+                                        ),
+                                        MenuItem(
                                             "privacy",
                                             "Privacy Policy",
                                             Icons.Default.PrivacyTip
@@ -145,6 +151,7 @@ class MainActivity : ComponentActivity() {
                                         }
                                         when(menuItem.id) {
                                             "privacy" -> uriHandler.openUri("https://omarefar.uk/privacy-noble-quran.html")
+                                            "translation" -> uriHandler.openUri("https://theclearquran.org")
                                             else -> navController.navigate(Screen.ContributorScreen.route + "/${menuItem.id}")
                                         }
                                     }
