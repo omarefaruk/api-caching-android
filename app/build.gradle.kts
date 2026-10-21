@@ -14,8 +14,8 @@ android {
         applicationId = "com.lifestudio.thenoblequran"
         minSdk = 25
         targetSdk = 36
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = 2
+        versionName = "1.0.1"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -79,7 +79,7 @@ dependencies {
     implementation(libs.androidx.room.ktx)
 
     // Preferences DataStore
-    implementation("androidx.datastore:datastore-preferences:1.2.0")
+    implementation("androidx.datastore:datastore-preferences:1.2.1")
 
 // material
     implementation("androidx.compose.material:material-icons-extended")
