@@ -77,6 +77,7 @@ import kotlinx.coroutines.launch
 import androidx.compose.material3.IconButtonDefaults
 import androidx.compose.ui.platform.LocalUriHandler
 import com.example.apicachingapplication.feature_reading.presentation.DrawerBody
+import com.example.apicachingapplication.feature_reading.presentation.DrawerBrown
 import com.example.apicachingapplication.feature_reading.presentation.DrawerHeader
 import com.example.apicachingapplication.feature_reading.presentation.quran_contributors.ContributorScreen
 
@@ -113,7 +114,7 @@ class MainActivity : ComponentActivity() {
                         drawerState = drawerState,
                         drawerContent = {
                             ModalDrawerSheet(
-                                drawerContainerColor = Color(0xFFF5EBDD)
+                                drawerContainerColor = DrawerBrown
                             ) {
                                 DrawerHeader()
                                 DrawerBody(
